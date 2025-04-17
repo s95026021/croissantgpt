@@ -10,8 +10,35 @@
       text-align: center;
       background-color: #f9f3e7;
       margin: 0;
-      padding: 50px 20px;
+      padding: 0;
       line-height: 1.6;
+    }
+    nav {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .logo span {
+      color: #FFD700;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #FFD700;
     }
     img {
       width: 200px;
@@ -40,6 +67,7 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
+      padding: 50px 20px;
     }
     .intro {
       margin-bottom: 50px;
@@ -109,6 +137,16 @@
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">🥐 <span>CroissantGPT</span></div>
+    <div>
+      <a href="#features">Features</a>
+      <a href="#overview">Overview</a>
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+    </div>
+  </nav>
+
   <div class="container">
     <div class="intro">
       <img src="logo.png" alt="CroissantGPT Logo">
@@ -122,7 +160,7 @@
       <p><em>Cross-cultural communication made simple. 🥐💬</em></p>
     </div>
 
-    <div class="business-analysis">
+    <div id="features" class="business-analysis">
       <h2>✨ Key Features</h2>
       <div class="features">
         <ul>
@@ -134,7 +172,7 @@
       </div>
     </div>
 
-    <div class="business-analysis">
+    <div id="overview" class="business-analysis">
       <h2>📘 Project Overview</h2>
       <h3>Segmentation</h3>
       <table class="segment-table">
@@ -156,7 +194,7 @@
       </p>
     </div>
 
-    <div class="business-analysis">
+    <div id="about" class="business-analysis">
       <h2>👥 About Us</h2>
       <p>
         We are two young people from different countries who met at National Taipei University (NTPU).
@@ -164,7 +202,7 @@
       </p>
     </div>
 
-    <div class="business-analysis">
+    <div id="team" class="business-analysis">
       <h2>Team Introduction</h2>
       <div class="team-grid">
         <div class="team-member">

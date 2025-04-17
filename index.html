@@ -52,18 +52,6 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: left;
     }
-    .analysis-section {
-      margin-bottom: 40px;
-    }
-    .emoji-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .emoji-header span {
-      font-size: 1.8rem;
-      margin-right: 10px;
-    }
     .segment-table {
       width: 100%;
       border-collapse: collapse;
@@ -77,40 +65,27 @@
       font-weight: bold;
       width: 120px;
     }
-    .list-item {
-      margin-bottom: 15px;
-    }
-    .list-item-header {
-      font-weight: bold;
-      display: inline-block;
-      margin-right: 5px;
-    }
-    .swot-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .team-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-top: 20px;
     }
-    .swot-item {
-      background-color: #f9f9f9;
+    .team-member {
+      flex: 1 1 250px;
+      background-color: #fdf9f2;
       padding: 15px;
       border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
     }
-    .swot-item h4 {
-      margin-top: 0;
-      font-size: 1.1rem;
-    }
-    .strengths {
-      border-left: 4px solid #4CAF50;
-    }
-    .weaknesses {
-      border-left: 4px solid #F44336;
-    }
-    .opportunities {
-      border-left: 4px solid #2196F3;
-    }
-    .threats {
-      border-left: 4px solid #FF9800;
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
     }
     footer {
       margin-top: 40px;
@@ -118,14 +93,6 @@
       color: #999;
       padding-top: 20px;
       border-top: 1px solid #e0d8c9;
-    }
-    @media (max-width: 768px) {
-      .swot-grid {
-        grid-template-columns: 1fr;
-      }
-      .business-analysis {
-        padding: 20px;
-      }
     }
   </style>
 </head>
@@ -144,114 +111,52 @@
     </div>
 
     <div class="business-analysis">
-      <h2>Business Analysis</h2>
-      
-      <div class="analysis-section">
-        <div class="emoji-header">
-          <span>🔍</span>
-          <h3>1. STP Analysis (Segmentation, Targeting, Positioning)</h3>
+      <h2>👥 About Us</h2>
+      <p>
+        We are two young people from different countries who met at National Taipei University (NTPU).
+        This project was created to promote cultural exchange and meaningful communication among international students.
+      </p>
+
+      <h2>📘 Project Overview</h2>
+      <h3>Segmentation</h3>
+      <table class="segment-table">
+        <tr><td>Category</td><td>Segment Description</td></tr>
+        <tr><td>Location</td><td>Foreign students living in Taiwan</td></tr>
+        <tr><td>Language</td><td>French, English, and Chinese users</td></tr>
+        <tr><td>Use Scenario</td><td>Language translation, cultural guidance, travel queries</td></tr>
+        <tr><td>User Type</td><td>Mainly international exchange students</td></tr>
+      </table>
+
+      <h3>Targeting</h3>
+      <p>
+        Exchange or international students from France and Western countries studying at National Taipei University (NTPU).
+      </p>
+
+      <h3>Positioning</h3>
+      <p>
+        CroissantGPT is a smart assistant designed for international users, offering real-time translation and local travel suggestions to help them quickly adapt to life in a foreign country.
+      </p>
+    </div>
+
+    <div class="business-analysis">
+      <h2>Team Introduction</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="frank.jpg" alt="Frank Yang">
+          <h4>Frank Yang（楊勝翔）</h4>
+          <p>Front-end developer,<br>Content & Project Planner</p>
         </div>
-        
-        <h4>1️⃣ Segmentation</h4>
-        <table class="segment-table">
-          <tr>
-            <td>Category</td>
-            <td>Segment Description</td>
-          </tr>
-          <tr>
-            <td>Location</td>
-            <td>Foreign students living in Taiwan</td>
-          </tr>
-          <tr>
-            <td>Language</td>
-            <td>French, English, and Chinese users</td>
-          </tr>
-          <tr>
-            <td>Use Scenario</td>
-            <td>Language translation, cultural guidance, travel queries</td>
-          </tr>
-          <tr>
-            <td>User Type</td>
-            <td>Primarily international exchange students</td>
-          </tr>
-        </table>
-        
-        <h4>2️⃣ Targeting</h4>
-        <ul>
-          <li>French and Western exchange or degree-seeking students studying at <strong>National Taipei University</strong> in Taiwan</li>
-        </ul>
-        
-        <h4>3️⃣ Positioning</h4>
-        <p><strong>CroissantGPT</strong> is a smart assistant designed for international users, offering real-time language translation and local travel suggestions to help them adapt quickly to life in a foreign country.</p>
-      </div>
-      
-      <div class="analysis-section">
-        <div class="emoji-header">
-          <span>🧩</span>
-          <h3>2. 4P Analysis (Marketing Mix)</h3>
-        </div>
-        
-        <h4>1️⃣ Product</h4>
-        <ul>
-          <li>Intelligent chatbot (via LINE Bot or Web Chat)</li>
-          <li>Real-time multilingual translation (Chinese, English, French)</li>
-          <li>Local travel recommendation and query service</li>
-          <li>Taiwanese cultural etiquette and social behavior guidance</li>
-        </ul>
-        
-        <h4>2️⃣ Price</h4>
-        <ul>
-          <li>Free basic version (open source or open use for campus environments)</li>
-          <li>Potential paid version (B2B customization for language schools or corporate onboarding systems)</li>
-        </ul>
-        
-        <h4>3️⃣ Place</h4>
-        <ul>
-          <li>GitHub Pages (web version)</li>
-          <li>LINE Official Account (chatbot)</li>
-          <li>Future expansion to Telegram, Messenger, or web widgets</li>
-        </ul>
-        
-        <h4>4️⃣ Promotion</h4>
-        <ul>
-          <li>Campus partnerships (e.g., promoting through exchange student offices or the International Office of NTPU)</li>
-          <li>Demo videos and practical use case showcases</li>
-        </ul>
-      </div>
-      
-      <div class="analysis-section">
-        <div class="emoji-header">
-          <span>🧠</span>
-          <h3>3. SWOT Analysis (Strengths, Weaknesses, Opportunities, Threats)</h3>
-        </div>
-        
-        <div class="swot-grid">
-          <div class="swot-item strengths">
-            <h4>✅ Strengths</h4>
-            <p>Combines AI-powered real-time translation, local cultural content, clear cross-cultural positioning, and educational/tourism value</p>
-          </div>
-          
-          <div class="swot-item weaknesses">
-            <h4>❌ Weaknesses</h4>
-            <p>Limited initial data sources, reliance on third-party APIs, lack of monetization model, weak brand presence</p>
-          </div>
-          
-          <div class="swot-item opportunities">
-            <h4>📈 Opportunities</h4>
-            <p>Growing exchange student programs, rise of generative AI, increasing demand for educational and language tech</p>
-          </div>
-          
-          <div class="swot-item threats">
-            <h4>⚠️ Threats</h4>
-            <p>Strong competition from existing translation tools (e.g., Google Translate, DeepL), user expectations for accuracy, high cost of AI services</p>
-          </div>
+        <div class="team-member">
+          <img src="xavier.jpg" alt="Xavier Rambaud">
+          <h4>Xavier Rambaud</h4>
+          <p>French Exchange Student,<br>Cultural Consultant & Translator</p>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 CroissantGPT Project Team
+    &copy; 2025 CroissantGPT Project Team | <a href="https://github.com/s95026021/croissantgpt">GitHub</a>
   </footer>
 </body>
 </html>

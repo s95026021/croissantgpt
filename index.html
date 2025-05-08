@@ -143,6 +143,7 @@
 
     #assistant h2 {
       color: #333; /* 與現有 h1 顏色一致 */
+      text-align: center; /* 讓助手標題置中 */
     }
 
     .language-buttons, .feature-buttons-assistant {
@@ -221,7 +222,8 @@
   <nav>
     <div class="logo">🥐 <span>CroissantGPT</span></div>
     <div>
-      <a href="#assistant">互動助手</a> <a href="#features">Features</a>
+      <a href="#assistant">互動助手</a>
+      <a href="#features">Features</a>
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
       <a href="#team">Team</a>
@@ -282,33 +284,51 @@
         This project was created to promote cultural exchange and meaningful communication among international students.
       </p>
     </div>
-  </div> <div id="assistant" class="business-analysis"> <h2 id="assistant-title">互動助手</h2>
+    
+    <div id="assistant" class="business-analysis">
+      <h2 id="assistant-title">互動助手</h2>
       
-    <div id="language-selection-area">
-      <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :</p>
-      <div class="language-buttons">
-          <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
-          <button class="lang-btn" data-lang="en">English</button>
-          <button class="lang-btn" data-lang="fr">Français</button>
+      <div id="language-selection-area">
+        <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :</p>
+        <div class="language-buttons">
+            <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="fr">Français</button>
+        </div>
+      </div>
+
+      <div id="main-features-area" style="display: none;">
+        <p id="feature-prompt-assistant">請選擇您需要的功能：</p>
+        <div class="feature-buttons-assistant">
+            <button class="feature-btn" data-feature="translate">即時翻譯</button>
+            <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
+            <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
+        </div>
+        
+        <div id="assistant-content-output" class="assistant-output">
+          <p>歡迎使用！請選擇一個功能。</p>
+        </div>
       </div>
     </div>
 
-    <div id="main-features-area" style="display: none;">
-      <p id="feature-prompt-assistant">請選擇您需要的功能：</p>
-      <div class="feature-buttons-assistant">
-          <button class="feature-btn" data-feature="translate">即時翻譯</button>
-          <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
-          <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
-      </div>
-      
-      <div id="assistant-content-output" class="assistant-output">
-        <p>歡迎使用！請選擇一個功能。</p>
+    <div id="team" class="business-analysis">
+      <h2>Team Introduction</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="frank.jpg" alt="Frank Yang">
+          <h4>Frank Yang（楊勝翔）</h4>
+          <p>Front-end developer,<br>Content & Project Planner</p>
+        </div>
+        <div class="team-member">
+          <img src="xavier.jpg" alt="Xavier Rambaud">
+          <h4>Xavier Rambaud</h4>
+          <p>French Exchange Student,<br>Cultural Consultant & Translator</p>
+        </div>
       </div>
     </div>
-  </div>
   </div> <footer>
-  &copy; 2025 CroissantGPT Project Team | <a href="https://github.com/s95026021/croissantgpt">GitHub</a>
-</footer>
+    &copy; 2025 CroissantGPT Project Team | <a href="https://github.com/s95026021/croissantgpt">GitHub</a>
+  </footer>
 
 <script>
   // 等待 HTML 文件完全載入
@@ -399,27 +419,5 @@
       }
   });
 </script>
-</body>
-</html>
-    <div id="team" class="business-analysis">
-      <h2>Team Introduction</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="frank.jpg" alt="Frank Yang">
-          <h4>Frank Yang（楊勝翔）</h4>
-          <p>Front-end developer,<br>Content & Project Planner</p>
-        </div>
-        <div class="team-member">
-          <img src="xavier.jpg" alt="Xavier Rambaud">
-          <h4>Xavier Rambaud</h4>
-          <p>French Exchange Student,<br>Cultural Consultant & Translator</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 CroissantGPT Project Team | <a href="https://github.com/s95026021/croissantgpt">GitHub</a>
-  </footer>
 </body>
 </html>

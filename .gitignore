@@ -15,3 +15,6 @@ build/
 
 # VS Code
 .vscode/
+
+# Service Account Key JSON file 
+croissantgpt-gcp-key.json 

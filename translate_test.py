@@ -1,8 +1,10 @@
 import os
+from dotenv import load_dotenv
 import requests
 import json # 用於更好地格式化輸出 JSON 回應
 
 # 1. 從環境變數讀取 API 金鑰
+load_dotenv()
 api_key = os.environ.get("GOOGLE_API_KEY")
 
 if not api_key:

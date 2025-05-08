@@ -134,7 +134,7 @@
       padding-top: 20px;
       border-top: 1px solid #e0d8c9;
     }
-    /* ===== 開始新增的互動助手區塊樣式 ===== */
+    /* ===== 互動助手區塊樣式 ===== */
     #assistant {
       background-color: #fdf9f2; /* 與 team-member 類似的背景色 */
       border-top: 2px solid #FFD700; /* 一個分隔線 */
@@ -215,15 +215,13 @@
     .assistant-output button:hover {
         background-color: #4cae4c;
     }
-    /* ===== 結束新增的互動助手區塊樣式 ===== */
   </style>
 </head>
 <body>
   <nav>
     <div class="logo">🥐 <span>CroissantGPT</span></div>
     <div>
-      <a href="#assistant">互動助手</a>
-      <a href="#features">Features</a>
+      <a href="#assistant">Interactive Assistant</a> <a href="#features">Features</a>
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
       <a href="#team">Team</a>
@@ -241,6 +239,30 @@
         It provides real-time translation between Chinese, English, and French, offers local travel recommendations, and guides users through cultural etiquette.
       </p>
       <p><em>Cross-cultural communication made simple. 🥐💬</em></p>
+    </div>
+
+    <div id="assistant" class="business-analysis">
+      <h2 id="assistant-title">Interactive Assistant</h2> <div id="language-selection-area">
+        <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :</p>
+        <div class="language-buttons">
+            <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="fr">Français</button>
+        </div>
+      </div>
+
+      <div id="main-features-area" style="display: none;">
+        <p id="feature-prompt-assistant">請選擇您需要的功能：</p>
+        <div class="feature-buttons-assistant">
+            <button class="feature-btn" data-feature="translate">即時翻譯</button>
+            <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
+            <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
+        </div>
+        
+        <div id="assistant-content-output" class="assistant-output">
+          <p>歡迎使用！請選擇一個功能。</p>
+        </div>
+      </div>
     </div>
 
     <div id="features" class="business-analysis">
@@ -285,32 +307,6 @@
       </p>
     </div>
     
-    <div id="assistant" class="business-analysis">
-      <h2 id="assistant-title">互動助手</h2>
-      
-      <div id="language-selection-area">
-        <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :</p>
-        <div class="language-buttons">
-            <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
-            <button class="lang-btn" data-lang="en">English</button>
-            <button class="lang-btn" data-lang="fr">Français</button>
-        </div>
-      </div>
-
-      <div id="main-features-area" style="display: none;">
-        <p id="feature-prompt-assistant">請選擇您需要的功能：</p>
-        <div class="feature-buttons-assistant">
-            <button class="feature-btn" data-feature="translate">即時翻譯</button>
-            <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
-            <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
-        </div>
-        
-        <div id="assistant-content-output" class="assistant-output">
-          <p>歡迎使用！請選擇一個功能。</p>
-        </div>
-      </div>
-    </div>
-
     <div id="team" class="business-analysis">
       <h2>Team Introduction</h2>
       <div class="team-grid">
@@ -349,16 +345,15 @@
               
               // 更新介面語言 (簡單範例，您可以擴展)
               if (selectedLang === 'zh') {
-                  assistantTitle.textContent = "互動助手";
+                  assistantTitle.textContent = "互動助手"; // Restores to Chinese if zh selected
                   document.getElementById('language-prompt-assistant').textContent = "請選擇您的語言：";
                   document.getElementById('feature-prompt-assistant').textContent = "請選擇您需要的功能：";
-                  // 您也可以在這裡更新按鈕的文字
                   document.querySelector('.feature-btn[data-feature="translate"]').textContent = "即時翻譯";
                   document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "三峽區旅遊介紹";
                   document.querySelector('.feature-btn[data-feature="customs"]').textContent = "台灣傳統風俗";
                   assistantContentOutput.innerHTML = `<p>語言已設為：繁體中文。請選擇一個功能。</p>`;
               } else if (selectedLang === 'en') {
-                  assistantTitle.textContent = "Interactive Assistant";
+                  assistantTitle.textContent = "Interactive Assistant"; // Stays/Changes to English
                   document.getElementById('language-prompt-assistant').textContent = "Please select your language:";
                   document.getElementById('feature-prompt-assistant').textContent = "Please select a feature:";
                   document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Translate";
@@ -366,7 +361,7 @@
                   document.querySelector('.feature-btn[data-feature="customs"]').textContent = "Taiwanese Customs";
                   assistantContentOutput.innerHTML = `<p>Language set to: English. Please select a feature.</p>`;
               } else if (selectedLang === 'fr') {
-                  assistantTitle.textContent = "Assistant Interactif";
+                  assistantTitle.textContent = "Assistant Interactif"; // Changes to French
                   document.getElementById('language-prompt-assistant').textContent = "Veuillez sélectionner votre langue :";
                   document.getElementById('feature-prompt-assistant').textContent = "Veuillez sélectionner une fonctionnalité :";
                   document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Traduction";
@@ -416,6 +411,10 @@
           if (correspondingLangButton) {
               correspondingLangButton.click(); 
           }
+      } else {
+        // 如果沒有儲存的語言，確保 assistant 標題是預設的 "Interactive Assistant"
+        // (因為 HTML 中已經改了，這裡可能不需要額外設定，但作為保險)
+        // document.getElementById('assistant-title').textContent = "Interactive Assistant";
       }
   });
 </script>

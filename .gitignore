@@ -1,20 +1,28 @@
-# Python
+# Google Cloud Service Account Key - Specific key file
+croissantgpt-project-b0dc034199b1.json
+
+# Environment file (should contain GOOGLE_APPLICATION_CREDENTIALS path)
+.env
+
+# Python cache & compiled files
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.env
-.env
+
+# Virtual environments
 env/
 venv/
 ENV/
 VENV/
+
+# Distribution / packaging
 *.egg-info/
 dist/
 build/
 
-# VS Code
+# IDE and OS specific files
 .vscode/
-
-# Service Account Key JSON file 
-croissantgpt-gcp-key.json 
+.idea/
+*.DS_Store
+Thumbs.db

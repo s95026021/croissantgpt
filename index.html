@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
       padding: 0;
       line-height: 1.6;
     }
+
     nav {
       background-color: #111;
       color: white;
@@ -24,75 +26,91 @@
       top: 0;
       z-index: 1000;
     }
+
     .logo {
       font-size: 1.5rem;
       font-weight: bold;
     }
+
     .logo span {
       color: #FFD700;
     }
+
     nav a {
       color: white;
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
+
     nav a:hover {
       color: #FFD700;
     }
+
     img {
       width: 200px;
       margin-bottom: 20px;
     }
+
     h1 {
       font-size: 2.5rem;
       color: #333;
     }
+
     h2 {
       font-size: 1.8rem;
       color: #444;
       margin-top: 40px;
     }
+
     h3 {
       font-size: 1.4rem;
       color: #555;
       margin-top: 30px;
     }
+
     p {
       font-size: 1.1rem;
       color: #555;
       max-width: 600px;
       margin: 0 auto 20px;
     }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 50px 20px;
     }
+
     .intro {
       margin-bottom: 50px;
     }
+
     .business-analysis {
       background-color: #fff;
       border-radius: 15px;
       padding: 30px;
       margin: 40px auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       text-align: left;
     }
+
     .segment-table {
       width: 100%;
       border-collapse: collapse;
       margin: 15px 0;
     }
+
     .segment-table td {
       padding: 8px;
       border-bottom: 1px solid #eee;
     }
+
     .segment-table td:first-child {
       font-weight: bold;
       width: 120px;
     }
+
     .team-grid {
       display: flex;
       gap: 30px;
@@ -100,14 +118,16 @@
       flex-wrap: wrap;
       margin-top: 20px;
     }
+
     .team-member {
       flex: 1 1 250px;
       background-color: #fdf9f2;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       text-align: center;
     }
+
     .team-member img {
       width: 120px;
       height: 120px;
@@ -115,18 +135,22 @@
       object-fit: cover;
       margin-bottom: 10px;
     }
+
     .features {
       text-align: left;
       margin-top: 20px;
     }
+
     .features ul {
       padding-left: 20px;
     }
+
     .features li {
       margin-bottom: 10px;
       font-size: 1.1rem;
       color: #333;
     }
+
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
@@ -134,47 +158,52 @@
       padding-top: 20px;
       border-top: 1px solid #e0d8c9;
     }
+
     /* ===== 互動助手區塊樣式 ===== */
     #assistant {
-      background-color: #fdf9f2; /* 與 team-member 類似的背景色 */
-      border-top: 2px solid #FFD700; /* 一個分隔線 */
+      background-color: #fdf9f2;
+      border-top: 2px solid #FFD700;
       padding-top: 30px;
     }
 
     #assistant h2 {
-      color: #333; /* 與現有 h1 顏色一致 */
-      text-align: center; /* 讓助手標題置中 */
+      color: #333;
+      text-align: center;
     }
 
-    .language-buttons, .feature-buttons-assistant {
+    .language-buttons,
+    .feature-buttons-assistant {
       margin-top: 20px;
       margin-bottom: 30px;
       display: flex;
       justify-content: center;
-      gap: 15px; /* 按鈕間的間距 */
-      flex-wrap: wrap; /* 按鈕多時換行 */
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
-    .lang-btn, .feature-btn {
+    .lang-btn,
+    .feature-btn {
       padding: 12px 25px;
       font-size: 1.1rem;
       color: white;
-      background-color: #FFB347; /* 可愛的橘色系 */
+      background-color: #FFB347;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    .lang-btn:hover, .feature-btn:hover {
-      background-color: #FF9F1C; /* 滑鼠懸停時更深的橘色 */
+    .lang-btn:hover,
+    .feature-btn:hover {
+      background-color: #FF9F1C;
     }
 
-    .feature-btn { /* 如果需要，可以給主要功能按鈕不同的顏色 */
-       background-color: #4a90e2; /* 例如一個藍色系 */
+    .feature-btn {
+      background-color: #4a90e2;
     }
+
     .feature-btn:hover {
-       background-color: #357abd;
+      background-color: #357abd;
     }
 
     .assistant-output {
@@ -183,45 +212,136 @@
       background-color: #fff;
       border: 1px solid #e0d8c9;
       border-radius: 8px;
-      min-height: 150px; /* 讓它有個初始高度 */
-      text-align: left; /* 內容靠左對齊 */
-      line-height: 1.8; /* 調整行高讓內容更易讀 */
+      min-height: 150px;
+      text-align: left;
+      line-height: 1.8;
     }
 
     .assistant-output h3 {
-        margin-top: 0;
-        color: #333;
+      margin-top: 0;
+      color: #333;
+      text-align: center; /* Center the "即時翻譯" title */
     }
 
     .assistant-output textarea {
-        width: 95%;
-        min-height: 80px;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
+      width: 98%; /* Adjusted for padding within .assistant-output */
+      box-sizing: border-box; /* Ensures padding doesn't add to width */
+      min-height: 80px; /* Initial height */
+      padding: 10px;
+      margin-top: 10px; /* Added margin top */
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      resize: none; /* Disable manual resize by user */
+      overflow-y: hidden; /* Hide scrollbar initially, show if content overflows max-height */
+    }
+    
+    .translate-buttons-container {
+        display: flex;
+        justify-content: center; /* Center buttons */
+        gap: 10px; /* Space between buttons */
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
 
-    .assistant-output button { /* 例如翻譯按鈕的樣式 */
-        padding: 10px 20px;
-        background-color: #5cb85c;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    /* ===== CSS Loader ===== */
+    .loader {
+      border: 4px solid #f3f3f3; /* Light grey */
+      border-top: 4px solid #5cb85c; /* Green to match translate button */
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      margin: 10px auto; /* Center it */
     }
-    .assistant-output button:hover {
-        background-color: #4cae4c;
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+
+    /* ===== 新增/修正給翻譯介面的樣式 ===== */
+    .translate-controls {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .translate-controls div { 
+      margin: 5px 10px;
+    }
+
+    .translate-controls label {
+      margin-right: 8px;
+      font-weight: bold;
+    }
+
+    .translate-controls select {
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      min-width: 150px; /* Give select some base width */
+    }
+
+    #submit-translate.action-btn, #clear-translate-input.action-btn { 
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      /* display: block;
+      margin: 0 auto 15px auto;  <-- Removed to allow side-by-side in a container */
+    }
+    #submit-translate.action-btn {
+        background-color: #5cb85c; 
+    }
+    #submit-translate.action-btn:hover {
+      background-color: #4cae4c;
+    }
+     #clear-translate-input.action-btn {
+        background-color: #f0ad4e; /* Orange for clear */
+    }
+    #clear-translate-input.action-btn:hover {
+        background-color: #ec971f;
+    }
+
+
+    #translate-output-container {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    #translate-output-container h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #555;
+      text-align: center; /* Center "翻譯結果" title */
+    }
+
+    #translate-output {
+      min-height: 40px;
+      color: #333;
+      white-space: pre-wrap;
+      text-align: left; /* Keep translated text left-aligned */
     }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="logo">🥐 <span>CroissantGPT</span></div>
     <div>
-      <a href="#assistant">Interactive Assistant</a> <a href="#features">Features</a>
+      <a href="#assistant">Interactive Assistant</a>
+      <a href="#features">Features</a>
       <a href="#overview">Overview</a>
       <a href="#about">About</a>
       <a href="#team">Team</a>
@@ -233,32 +353,36 @@
       <img src="logo.png" alt="CroissantGPT Logo">
       <h1>CroissantGPT</h1>
       <p>
-        CroissantGPT is a cross-cultural smart assistant designed to help international students and expats adapt to life abroad.
+        CroissantGPT is a cross-cultural smart assistant designed to help international students and expats adapt to
+        life abroad.
       </p>
       <p>
-        It provides real-time translation between Chinese, English, and French, offers local travel recommendations, and guides users through cultural etiquette.
+        It provides real-time translation between Chinese, English, and French, offers local travel recommendations, and
+        guides users through cultural etiquette.
       </p>
       <p><em>Cross-cultural communication made simple. 🥐💬</em></p>
     </div>
 
     <div id="assistant" class="business-analysis">
-      <h2 id="assistant-title">Interactive Assistant</h2> <div id="language-selection-area">
-        <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :</p>
+      <h2 id="assistant-title">Interactive Assistant</h2>
+      <div id="language-selection-area">
+        <p id="language-prompt-assistant">請選擇您的語言 (Please select your language / Veuillez sélectionner votre langue) :
+        </p>
         <div class="language-buttons">
-            <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
-            <button class="lang-btn" data-lang="en">English</button>
-            <button class="lang-btn" data-lang="fr">Français</button>
+          <button class="lang-btn" data-lang="zh">中文 (Traditional Chinese)</button>
+          <button class="lang-btn" data-lang="en">English</button>
+          <button class="lang-btn" data-lang="fr">Français</button>
         </div>
       </div>
 
       <div id="main-features-area" style="display: none;">
         <p id="feature-prompt-assistant">請選擇您需要的功能：</p>
         <div class="feature-buttons-assistant">
-            <button class="feature-btn" data-feature="translate">即時翻譯</button>
-            <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
-            <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
+          <button class="feature-btn" data-feature="translate">即時翻譯</button>
+          <button class="feature-btn" data-feature="sanxia-tour">三峽區旅遊介紹</button>
+          <button class="feature-btn" data-feature="customs">台灣傳統風俗</button>
         </div>
-        
+
         <div id="assistant-content-output" class="assistant-output">
           <p>歡迎使用！請選擇一個功能。</p>
         </div>
@@ -281,21 +405,38 @@
       <h2>📘 Project Overview</h2>
       <h3>Segmentation</h3>
       <table class="segment-table">
-        <tr><td>Category</td><td>Segment Description</td></tr>
-        <tr><td>Location</td><td>Foreign students living in Taiwan</td></tr>
-        <tr><td>Language</td><td>French, English, and Chinese users</td></tr>
-        <tr><td>Use Scenario</td><td>Language translation, cultural guidance, travel queries</td></tr>
-        <tr><td>User Type</td><td>Mainly international exchange students</td></tr>
+        <tr>
+          <td>Category</td>
+          <td>Segment Description</td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td>Foreign students living in Taiwan</td>
+        </tr>
+        <tr>
+          <td>Language</td>
+          <td>French, English, and Chinese users</td>
+        </tr>
+        <tr>
+          <td>Use Scenario</td>
+          <td>Language translation, cultural guidance, travel queries</td>
+        </tr>
+        <tr>
+          <td>User Type</td>
+          <td>Mainly international exchange students</td>
+        </tr>
       </table>
 
       <h3>Targeting</h3>
       <p>
-        Exchange or international students from France and Western countries studying at National Taipei University (NTPU).
+        Exchange or international students from France and Western countries studying at National Taipei University
+        (NTPU).
       </p>
 
       <h3>Positioning</h3>
       <p>
-        CroissantGPT is a smart assistant designed for international users, offering real-time translation and local travel suggestions to help them quickly adapt to life in a foreign country.
+        CroissantGPT is a smart assistant designed for international users, offering real-time translation and local
+        travel suggestions to help them quickly adapt to life in a foreign country.
       </p>
     </div>
 
@@ -306,7 +447,7 @@
         This project was created to promote cultural exchange and meaningful communication among international students.
       </p>
     </div>
-    
+
     <div id="team" class="business-analysis">
       <h2>Team Introduction</h2>
       <div class="team-grid">
@@ -327,95 +468,247 @@
   </footer>
 
 <script>
-  // 等待 HTML 文件完全載入
-  document.addEventListener('DOMContentLoaded', function() {
-      const languageSelectionArea = document.getElementById('language-selection-area');
-      const mainFeaturesArea = document.getElementById('main-features-area');
-      const assistantContentOutput = document.getElementById('assistant-content-output');
-      const assistantTitle = document.getElementById('assistant-title'); // 助手區塊的標題
+  document.addEventListener('DOMContentLoaded', function () {
+    const languageSelectionArea = document.getElementById('language-selection-area');
+    const mainFeaturesArea = document.getElementById('main-features-area');
+    const assistantContentOutput = document.getElementById('assistant-content-output');
+    const assistantTitle = document.getElementById('assistant-title');
 
-      const langButtons = document.querySelectorAll('.lang-btn');
-      const featureButtons = document.querySelectorAll('.feature-btn');
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const featureButtons = document.querySelectorAll('.feature-btn');
 
-      // 語言按鈕的點擊事件
-      langButtons.forEach(button => {
-          button.addEventListener('click', function() {
-              const selectedLang = this.dataset.lang;
-              localStorage.setItem('croissantGPT_selectedLang', selectedLang);
-              
-              // 更新介面語言 (簡單範例，您可以擴展)
-              if (selectedLang === 'zh') {
-                  assistantTitle.textContent = "互動助手"; // Restores to Chinese if zh selected
-                  document.getElementById('language-prompt-assistant').textContent = "請選擇您的語言：";
-                  document.getElementById('feature-prompt-assistant').textContent = "請選擇您需要的功能：";
-                  document.querySelector('.feature-btn[data-feature="translate"]').textContent = "即時翻譯";
-                  document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "三峽區旅遊介紹";
-                  document.querySelector('.feature-btn[data-feature="customs"]').textContent = "台灣傳統風俗";
-                  assistantContentOutput.innerHTML = `<p>語言已設為：繁體中文。請選擇一個功能。</p>`;
-              } else if (selectedLang === 'en') {
-                  assistantTitle.textContent = "Interactive Assistant"; // Stays/Changes to English
-                  document.getElementById('language-prompt-assistant').textContent = "Please select your language:";
-                  document.getElementById('feature-prompt-assistant').textContent = "Please select a feature:";
-                  document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Translate";
-                  document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "Sanxia Tour Info";
-                  document.querySelector('.feature-btn[data-feature="customs"]').textContent = "Taiwanese Customs";
-                  assistantContentOutput.innerHTML = `<p>Language set to: English. Please select a feature.</p>`;
-              } else if (selectedLang === 'fr') {
-                  assistantTitle.textContent = "Assistant Interactif"; // Changes to French
-                  document.getElementById('language-prompt-assistant').textContent = "Veuillez sélectionner votre langue :";
-                  document.getElementById('feature-prompt-assistant').textContent = "Veuillez sélectionner une fonctionnalité :";
-                  document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Traduction";
-                  document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "Info touristique Sanxia";
-                  document.querySelector('.feature-btn[data-feature="customs"]').textContent = "Coutumes taïwanaises";
-                  assistantContentOutput.innerHTML = `<p>Langue définie sur : Français. Veuillez sélectionner une fonctionnalité.</p>`;
-              }
+    // --- Helper function for adjusting textarea height ---
+    function adjustTextareaHeight(textareaElement) {
+        if (textareaElement) {
+            textareaElement.style.height = 'auto'; // Reset height to shrink if text is deleted
+            textareaElement.style.height = (textareaElement.scrollHeight) + 'px';
+        }
+    }
 
-              // 隱藏語言選擇，顯示主要功能按鈕
-              languageSelectionArea.style.display = 'none';
-              mainFeaturesArea.style.display = 'block';
-          });
+    // --- Main function to handle translation requests ---
+    async function handleTranslationRequest() {
+        console.log("handleTranslationRequest 函數已呼叫。"); 
+
+        const textToTranslateElement = document.getElementById('translate-input');
+        const sourceLanguageElement = document.getElementById('source-language');
+        const targetLanguageElement = document.getElementById('target-language');
+        const translateOutputElement = document.getElementById('translate-output');
+        const loaderElement = document.getElementById('loader');
+        const submitTranslateButton = document.getElementById('submit-translate'); // Get the button
+
+        const textToTranslate = textToTranslateElement.value;
+        const sourceLanguage = sourceLanguageElement.value;
+        const targetLanguage = targetLanguageElement.value;
+        
+        const currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+        let errorMsg = "請輸入要翻譯的文字。";
+        // let translatingMsg = "翻譯中..."; // Loader will replace this text
+        
+        if (currentUiLang === 'en') {
+            errorMsg = "Please enter text to translate.";
+        } else if (currentUiLang === 'fr') {
+            errorMsg = "Veuillez entrer le texte à traduire.";
+        }
+
+        if (!textToTranslate.trim()) {
+            console.log("錯誤：沒有輸入要翻譯的文字。");
+            if(translateOutputElement) {
+                translateOutputElement.textContent = errorMsg;
+                translateOutputElement.style.color = 'red';
+            }
+            return;
+        }
+
+        console.log(`準備翻譯: "${textToTranslate}" 從 ${sourceLanguage} 到 ${targetLanguage}`);
+        if(translateOutputElement) translateOutputElement.textContent = ''; // Clear previous result
+        if(loaderElement) loaderElement.style.display = 'block'; // Show loader
+        if(submitTranslateButton) submitTranslateButton.disabled = true; // Disable button
+
+        const backendUrl = 'http://127.0.0.1:5000/translate';
+        try {
+            console.log(`正要發送 fetch 請求到: ${backendUrl}`);
+            const requestBody = {
+                text: textToTranslate,
+                source_lang: sourceLanguage,
+                target_lang: targetLanguage
+            };
+            console.log("請求的 body:", JSON.stringify(requestBody));
+
+            const response = await fetch(backendUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            });
+            
+            console.log("收到 fetch 回應:", response);
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({ error: "無法解析伺服器錯誤回應或網路錯誤" }));
+                console.error("伺服器回傳錯誤:", response.status, errorData);
+                throw new Error(errorData.error || `HTTP 錯誤! 狀態碼: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log("從後端收到的資料:", data);
+
+            if (data.translated_text) {
+                let finalText = data.translated_text;
+                if (data.detected_source_language && sourceLanguage === 'auto') {
+                    console.log(`偵測到的來源語言: ${data.detected_source_language}`);
+                }
+                if(translateOutputElement) translateOutputElement.textContent = finalText;
+                if(translateOutputElement) translateOutputElement.style.color = '#333';
+            } else if (data.error) {
+                console.error("後端回傳的錯誤訊息:", data.error);
+                if(translateOutputElement) translateOutputElement.textContent = `翻譯錯誤: ${data.error}`; // Display more specific error
+                if(translateOutputElement) translateOutputElement.style.color = 'red';
+            } else {
+                console.warn("收到未知的回應格式:", data);
+                if(translateOutputElement) translateOutputElement.textContent = "收到未知的回應格式。";
+                if(translateOutputElement) translateOutputElement.style.color = 'orange';
+            }
+
+        } catch (error) {
+            console.error('翻譯請求過程中發生JavaScript錯誤 (catch區塊):', error);
+            if(translateOutputElement) {
+                translateOutputElement.textContent = `翻譯請求失敗: ${error.message}`; // Display more specific error
+                translateOutputElement.style.color = 'red';
+            }
+        } finally {
+            if(loaderElement) loaderElement.style.display = 'none'; // Hide loader
+            if(submitTranslateButton) submitTranslateButton.disabled = false; // Re-enable button
+        }
+    }
+
+    langButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const selectedLang = this.dataset.lang;
+        localStorage.setItem('croissantGPT_selectedLang', selectedLang);
+
+        // UI text update logic based on selectedLang
+        if (selectedLang === 'zh') {
+          assistantTitle.textContent = "互動助手";
+          document.getElementById('language-prompt-assistant').textContent = "請選擇您的語言：";
+          document.getElementById('feature-prompt-assistant').textContent = "請選擇您需要的功能：";
+          document.querySelector('.feature-btn[data-feature="translate"]').textContent = "即時翻譯";
+          document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "三峽區旅遊介紹";
+          document.querySelector('.feature-btn[data-feature="customs"]').textContent = "台灣傳統風俗";
+        } else if (selectedLang === 'en') {
+          assistantTitle.textContent = "Interactive Assistant";
+          document.getElementById('language-prompt-assistant').textContent = "Please select your language:";
+          document.getElementById('feature-prompt-assistant').textContent = "Please select a feature:";
+          document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Translate";
+          document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "Sanxia Tour Info";
+          document.querySelector('.feature-btn[data-feature="customs"]').textContent = "Taiwanese Customs";
+        } else if (selectedLang === 'fr') {
+          assistantTitle.textContent = "Assistant Interactif";
+          document.getElementById('language-prompt-assistant').textContent = "Veuillez sélectionner votre langue :";
+          document.getElementById('feature-prompt-assistant').textContent = "Veuillez sélectionner une fonctionnalité :";
+          document.querySelector('.feature-btn[data-feature="translate"]').textContent = "Traduction";
+          document.querySelector('.feature-btn[data-feature="sanxia-tour"]').textContent = "Info touristique Sanxia";
+          document.querySelector('.feature-btn[data-feature="customs"]').textContent = "Coutumes taïwanaises";
+        }
+        // Reset content area when language changes after selection
+        assistantContentOutput.innerHTML = `<p>歡迎使用！請選擇一個功能。</p>`; 
+        languageSelectionArea.style.display = 'none';
+        mainFeaturesArea.style.display = 'block';
       });
+    });
 
-      // 主要功能按鈕的點擊事件
-      featureButtons.forEach(button => {
-          button.addEventListener('click', function() {
-              const feature = this.dataset.feature;
-              const selectedLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh'; // 獲取儲存的語言
-              assistantContentOutput.innerHTML = `<p>正在為您準備「${this.textContent}」的內容 (語言: ${selectedLang})...</p>`;
+    featureButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const feature = this.dataset.feature;
+        const selectedLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+        
+        if (feature === 'translate') {
+          let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+          let translateButtonText = "翻譯";
+          let sourceLangText = "來源語言：";
+          let targetLangText = "目標語言：";
+          let autoDetectText = "自動偵測";
+          let zhTwText = "中文 (繁體)";
+          let enText = "English";
+          let frText = "Français";
+          let placeholderText = "在這裡輸入要翻譯的文字...";
+          let resultText = "翻譯結果：";
+          let clearButtonText = "清除";
 
-              // 之後，根據 feature 和 selectedLang 呼叫對應的 API (Gemini 或翻譯)
-              if (feature === 'translate') {
-                  // TODO: 顯示翻譯輸入框和輸出區域
-                  assistantContentOutput.innerHTML = `
-                      <h3>即時翻譯</h3>
-                      <textarea id="translate-input" placeholder="在這裡輸入要翻譯的文字..."></textarea>
-                      <button id="submit-translate">翻譯</button>
-                      <div id="translate-output"></div>
-                  `;
-                  // 綁定翻譯按鈕的事件等
-              } else if (feature === 'sanxia-tour') {
-                  // TODO: 呼叫 Gemini API 獲取三峽旅遊介紹
-                  // fetchGeminiResponse("介紹三峽區的旅遊景點", selectedLang);
-              } else if (feature === 'customs') {
-                  // TODO: 呼叫 Gemini API 獲取台灣傳統風俗
-                  // fetchGeminiResponse("介紹台灣的傳統風俗", selectedLang);
-              }
-          });
-      });
-
-      // 檢查是否已經選擇過語言 (例如重新整理頁面後)
-      const storedLang = localStorage.getItem('croissantGPT_selectedLang');
-      if (storedLang) {
-          // 模擬點擊對應的語言按鈕來恢復狀態和UI
-          const correspondingLangButton = document.querySelector(`.lang-btn[data-lang="${storedLang}"]`);
-          if (correspondingLangButton) {
-              correspondingLangButton.click(); 
+          if (currentUiLang === 'en') {
+            translateButtonText = "Translate"; sourceLangText = "Source Language:"; targetLangText = "Target Language:";
+            autoDetectText = "Auto-detect"; zhTwText = "Chinese (Traditional)"; placeholderText = "Enter text to translate here...";
+            resultText = "Translation Result:"; clearButtonText = "Clear";
+          } else if (currentUiLang === 'fr') {
+            translateButtonText = "Traduire"; sourceLangText = "Langue source :"; targetLangText = "Langue cible :";
+            autoDetectText = "Détection automatique"; zhTwText = "Chinois (Traditionnel)"; placeholderText = "Entrez le texte à traduire ici...";
+            resultText = "Résultat de la traduction :"; clearButtonText = "Effacer";
           }
-      } else {
-        // 如果沒有儲存的語言，確保 assistant 標題是預設的 "Interactive Assistant"
-        // (因為 HTML 中已經改了，這裡可能不需要額外設定，但作為保險)
-        // document.getElementById('assistant-title').textContent = "Interactive Assistant";
+
+          assistantContentOutput.innerHTML = `
+              <h3>${document.querySelector('.feature-btn[data-feature="translate"]').textContent}</h3>
+              <div class="translate-controls">
+                  <div>
+                      <label for="source-language">${sourceLangText}</label>
+                      <select id="source-language">
+                          <option value="auto">${autoDetectText}</option>
+                          <option value="zh-TW">${zhTwText}</option>
+                          <option value="en">${enText}</option>
+                          <option value="fr">${frText}</option>
+                      </select>
+                  </div>
+                  <div>
+                      <label for="target-language">${targetLangText}</label>
+                      <select id="target-language">
+                          <option value="en">${enText}</option>
+                          <option value="zh-TW">${zhTwText}</option>
+                          <option value="fr">${frText}</option>
+                      </select>
+                  </div>
+              </div>
+              <textarea id="translate-input" placeholder="${placeholderText}" rows="3"></textarea> <div class="translate-buttons-container">
+                  <button id="submit-translate" class="action-btn">${translateButtonText}</button>
+                  <button id="clear-translate-input" class="action-btn" type="button">${clearButtonText}</button>
+              </div>
+              <div id="translate-output-container">
+                  <div id="loader" style="display: none;"></div> <h4>${resultText}</h4>
+                  <p id="translate-output">(翻譯結果將顯示於此)</p>
+              </div>
+          `;
+
+          const targetLangDropdown = document.getElementById('target-language');
+          if (currentUiLang === 'zh') targetLangDropdown.value = 'en';
+          else if (currentUiLang === 'en') targetLangDropdown.value = 'zh-TW';
+          else if (currentUiLang === 'fr') targetLangDropdown.value = 'zh-TW';
+          
+          const translateInputElement = document.getElementById('translate-input');
+          if(translateInputElement) {
+            translateInputElement.addEventListener('input', function() { adjustTextareaHeight(this); });
+            adjustTextareaHeight(translateInputElement); // Initial adjustment
+          }
+          
+          document.getElementById('submit-translate').addEventListener('click', handleTranslationRequest);
+          document.getElementById('clear-translate-input').addEventListener('click', function() {
+              if(translateInputElement) translateInputElement.value = '';
+              const translateOutputElement = document.getElementById('translate-output');
+              if(translateOutputElement) translateOutputElement.textContent = '(翻譯結果將顯示於此)';
+              if(translateOutputElement) translateOutputElement.style.color = '#333'; // Reset color
+              if(translateInputElement) adjustTextareaHeight(translateInputElement); // Adjust height after clearing
+          });
+        
+        } else if (feature === 'sanxia-tour') {
+          assistantContentOutput.innerHTML = `<h3>三峽區旅遊介紹</h3><p>正在從 Gemini 獲取三峽區旅遊資訊 (語言: ${selectedLang})...</p>`;
+        } else if (feature === 'customs') {
+          assistantContentOutput.innerHTML = `<h3>台灣傳統風俗</h3><p>正在從 Gemini 獲取台灣風俗資訊 (語言: ${selectedLang})...</p>`;
+        }
+      });
+    });
+
+    const storedLang = localStorage.getItem('croissantGPT_selectedLang');
+    if (storedLang) {
+      const correspondingLangButton = document.querySelector(`.lang-btn[data-lang="${storedLang}"]`);
+      if (correspondingLangButton) {
+        correspondingLangButton.click();
       }
+    }
   });
 </script>
 </body>

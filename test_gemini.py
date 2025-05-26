@@ -1,4 +1,5 @@
-import google.generativeai as genai
+# import google.generativeai as genai
+from google import genai
 import os
 import traceback # 用於印出更詳細的錯誤資訊
 
@@ -42,16 +43,21 @@ try:
         exit() # 終止腳本
 
     print(f"步驟 2: 準備使用 API 金鑰 (長度: {len(api_key)}) 設定 genai...")
-    genai.configure(api_key=api_key)
+    # genai.configure(api_key=api_key)
+    client = genai.Client(api_key=api_key)
     print("    genai.configure 完成。")
 
 # ... (genai.configure 完成之後) ...
     print("步驟 2.5: 列出可用的模型 (支援 'generateContent')...")
     try:
         count = 0
-        for m in genai.list_models():
-            if 'generateContent' in m.supported_generation_methods:
-                print(f"    - {m.name} (顯示名稱: {m.display_name})")
+        # for m in genai.list_models():
+        #     if 'generateContent' in m.supported_generation_methods:
+        #         print(f"    - {m.name} (顯示名稱: {m.display_name})")
+        #         count += 1
+        for m in client.models.list():
+            if "generateContent" in m.supported_actions:
+                print(f"    - {m.name} (display_name: {m.display_name})")
                 count += 1
         if count == 0:
             print("    在此 API 金鑰下未找到支援 'generateContent' 的模型。")
@@ -61,13 +67,18 @@ try:
     # ... 接下來是步驟 3 (初始化模型) ...
 
     print("步驟 3: 準備初始化模型 'gemini-1.5-flash-latest'...")
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    # model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    model = "gemini-1.5-flash-latest"
     print("    模型初始化完成。")
 
     prompt = "你好！請用繁體中文簡單介紹一下你自己。"
     print(f"步驟 4: 準備向模型發送提示：'{prompt}'")
 
-    response = model.generate_content(prompt)
+    # response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model=model,
+        contents=prompt
+    )
     print("步驟 5: 已從模型收到回應。")
 
 

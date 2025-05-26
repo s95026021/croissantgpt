@@ -15,6 +15,7 @@ env/
 venv/
 ENV/
 VENV/
+.venv/
 
 # Distribution / packaging
 *.egg-info/

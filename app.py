@@ -8,12 +8,12 @@ load_dotenv()
 print(f"DEBUG: .env loaded. GOOGLE_APPLICATION_CREDENTIALS = {os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
 # ===== 偵錯行結束 =====
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
-from google.cloud import translate_v2 as translate
+from google.cloud import translate_v3 as translate
 
 # 初始化 Flask 應用程式
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 CORS(app)  # 啟用 CORS
 
 # Google Translate 客戶端將會自動使用 GOOGLE_APPLICATION_CREDENTIALS 環境變數進行驗證
@@ -42,6 +42,11 @@ try:
 except Exception as e:
     print(f"初始化 Google Translate 客戶端時發生嚴重錯誤: {e}")
     # translate_client 保持為 None (或已是 None)
+
+
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
 
 @app.route('/translate', methods=['POST'])
 def handle_translate_request():

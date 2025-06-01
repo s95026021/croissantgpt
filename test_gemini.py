@@ -71,7 +71,8 @@ try:
     model = "gemini-1.5-flash-latest"
     print("    模型初始化完成。")
 
-    prompt = "你好！請用繁體中文簡單介紹一下你自己。"
+    # prompt = "你好！請用繁體中文簡單介紹一下你自己。"
+    prompt = "What are the best french cheese?"
     print(f"步驟 4: 準備向模型發送提示：'{prompt}'")
 
     # response = model.generate_content(prompt)

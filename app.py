@@ -46,7 +46,10 @@ except Exception as e:
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("index.html")
+    return render_template("index.html",
+                           logo="static/images/logo.png",
+                           frank_image="static/images/frank.png",
+                           xavier_image="static/images/xavier.png")
 
 @app.route('/translate', methods=['POST'])
 def handle_translate_request():

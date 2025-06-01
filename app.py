@@ -13,7 +13,7 @@ from flask_cors import CORS
 from google.cloud import translate_v3 as translate
 
 # 初始化 Flask 應用程式
-app = Flask(__name__, template_folder=".")
+app = Flask(__name__, template_folder="./templates", static_folder="./static")
 CORS(app)  # 啟用 CORS
 
 # Google Translate 客戶端將會自動使用 GOOGLE_APPLICATION_CREDENTIALS 環境變數進行驗證

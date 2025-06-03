@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function handleMistralAIRequest(question) {
         console.log("handleMistralAIRequest");
-        const backendUrl = "http://127.0.0.1/mistralai";
+        const backendUrl = "https://croissantgpt.onrender.com/mistralai";
         try {
             const requestBody = {
                 "prompt": question,
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function handleGeminiAIRequest(question) {
         let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
         console.log("handleGeminiAIRequest");
-        const backendUrl = "http://127.0.0.1/geminiai";
+        const backendUrl = "https://croissantgpt.onrender.com/geminiai";
         try {
             const requestBody = {
                 "prompt": question,
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (loaderElement) loaderElement.style.display = 'block'; // Show loader
         if (submitTranslateButton) submitTranslateButton.disabled = true; // Disable button
 
-        const backendUrl = 'http://127.0.0.1/translate';
+        const backendUrl = 'https://croissantgpt.onrender.com/translate';
         try {
             console.log(`正要發送 fetch 請求到: ${backendUrl}`);
             const requestBody = {

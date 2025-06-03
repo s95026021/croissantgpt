@@ -19,7 +19,7 @@ import asyncio
 
 # 初始化 Flask 應用程式
 app = Flask(__name__, template_folder="./templates", static_folder="./static")
-CORS(app)  # 啟用 CORS
+# CORS(app)  # 啟用 CORS
 
 MISTRAL_API_KEY = os.environ.get("MISTRAL_API_KEY")
 mistral_model = "mistral-large-latest"

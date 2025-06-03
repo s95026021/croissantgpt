@@ -90,6 +90,7 @@ try:
         print("收到的回應無效、為空或沒有 .text 屬性。")
         print("    可能的候選答案 (Candidates):")
         if response and hasattr(response, 'candidates'):
+            print("Candidates:")
             for candidate in response.candidates:
                 print(f"        - {candidate}") # 印出每個候選答案的內容
         else:

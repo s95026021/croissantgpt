@@ -15,6 +15,76 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    async function handleMistralAIRequest(question) {
+        console.log("handleMistralAIRequest");
+        const backendUrl = "http://127.0.0.1:5000/mistralai";
+        try {
+            const requestBody = {
+                "prompt": question,
+            };
+            const response = await fetch(backendUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            });
+            console.log(response);
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({ error: "the response is not valid" }));
+                console.error("bad response status:", response.status, errorData);
+                throw new Error(errorData.error || `HTTP 錯誤! 狀態碼: ${response.status}`);
+            }
+            const data = await response.json();
+            assistantContentOutput.innerHTML = data[0];
+            // return data[0]
+        } catch (error) {
+            console.error('翻譯請求過程中發生JavaScript錯誤 (catch區塊):', error);
+            if (translateOutputElement) {
+                translateOutputElement.textContent = `翻譯請求失敗: ${error.message}`; // Display more specific error
+                translateOutputElement.style.color = 'red';
+            }
+        } finally {
+            if (loaderElement) loaderElement.style.display = 'none'; // Hide loader
+            if (submitTranslateButton) submitTranslateButton.disabled = false; // Re-enable button
+        }
+    }
+
+    async function handleGeminiAIRequest(question) {
+        let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+        console.log("handleGeminiAIRequest");
+        const backendUrl = "http://127.0.0.1:5000/geminiai";
+        try {
+            const requestBody = {
+                "prompt": question,
+                "language": currentUiLang,
+            };
+            const response = await fetch(backendUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(requestBody)
+            });
+            console.log(response);
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({ error: "the response is not valid" }));
+                console.error("bad response status:", response.status, errorData);
+                throw new Error(errorData.error || `HTTP 錯誤! 狀態碼: ${response.status}`);
+            }
+            const data = await response.json();
+            assistantContentOutput.innerHTML = data[0];
+            // return data[0]
+        } catch (error) {
+            console.error('翻譯請求過程中發生JavaScript錯誤 (catch區塊):', error);
+            if (translateOutputElement) {
+                translateOutputElement.textContent = `翻譯請求失敗: ${error.message}`; // Display more specific error
+                translateOutputElement.style.color = 'red';
+            }
+        } finally {
+            if (loaderElement) loaderElement.style.display = 'none'; // Hide loader
+            if (submitTranslateButton) submitTranslateButton.disabled = false; // Re-enable button
+        }
+    }
+
     // --- Main function to handle translation requests ---
     async function handleTranslationRequest() {
         console.log("handleTranslationRequest 函數已呼叫。");
@@ -224,11 +294,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (translateInputElement) adjustTextareaHeight(translateInputElement); // Adjust height after clearing
                 });
 
-            } else if (feature === 'sanxia-tour') {
-                assistantContentOutput.innerHTML = `<h3>三峽區旅遊介紹</h3><p>正在從 Gemini 獲取三峽區旅遊資訊 (語言: ${selectedLang})...</p>`;
-            } else if (feature === 'customs') {
-                assistantContentOutput.innerHTML = `<h3>台灣傳統風俗</h3><p>正在從 Gemini 獲取台灣風俗資訊 (語言: ${selectedLang})...</p>`;
+            } else if (["sanxia-tour", "customs"].includes(feature)) {
+                let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+                if (currentUiLang === "fr") {
+                    handleMistralAIRequest(feature);
+                } else {
+                    handleGeminiAIRequest(feature);
+                }
             }
+            // } else if (feature === 'sanxia-tour') {
+            //     // assistantContentOutput.innerHTML = `<h3>三峽區旅遊介紹</h3><p>正在從 Gemini 獲取三峽區旅遊資訊 (語言: ${selectedLang})...</p>`;
+            //     let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+            //     if (currentUiLang === "fr") {
+            //         handleMistralAIRequest("sanxia-tour");
+            //     }
+            // } else if (feature === 'customs') {
+            //     // assistantContentOutput.innerHTML = `<h3>台灣傳統風俗</h3><p>正在從 Gemini 獲取台灣風俗資訊 (語言: ${selectedLang})...</p>`;
+            //     let currentUiLang = localStorage.getItem('croissantGPT_selectedLang') || 'zh';
+            //     if (currentUiLang === "fr") {
+            //         handleMistralAIRequest("sanxia-tour");
+            //     }
+            // }
         });
     });
 

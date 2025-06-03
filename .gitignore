@@ -1,3 +1,9 @@
+.gitignore
+
+test_gemini.py
+test_mistralai.py
+translate_test*
+
 # Google Cloud Service Account Key - Specific key file
 croissantgpt-project-b0dc034199b1.json
 

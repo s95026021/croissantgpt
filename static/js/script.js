@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             // Reset content area when language changes after selection
             assistantContentOutput.innerHTML = `<p>歡迎使用！請選擇一個功能。</p>`;
-            languageSelectionArea.style.display = 'none';
+            // languageSelectionArea.style.display = 'none';
             mainFeaturesArea.style.display = 'block';
         });
     });

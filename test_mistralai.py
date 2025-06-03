@@ -3,7 +3,7 @@ from rich.markdown import Markdown
 from rich.console import Console
 from mistralai import Mistral
 
-API_KEY = "PbzkjJxzUAhDhPDN1aYh0oQFzSTgbVjW"
+MISTRAL_API_KEY = os.environ.get("MISTRAL_API_KEY")
 model = "mistral-large-latest"
 
 def display_markdown(md):
@@ -11,7 +11,7 @@ def display_markdown(md):
     md = Markdown(md)
     console.print(md)
 
-client = Mistral(api_key=API_KEY)
+client = Mistral(api_key=MISTRAL_API_KEY)
 
 chat_response = client.chat.complete(
     model= model,

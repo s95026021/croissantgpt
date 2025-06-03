@@ -32,6 +32,7 @@ def index():
                            frank_image="static/images/frank.png",
                            xavier_image="static/images/xavier.png")
 
+
 @app.route('/translate', methods=['POST'])
 def handle_translate_request():
     try:
